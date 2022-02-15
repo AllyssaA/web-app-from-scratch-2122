@@ -1,5 +1,7 @@
 getAndRenderData();
 
+const display = document.querySelector("section");
+display.textContent = "Loading art collection...";
 const artCollection = [];
 
 function getAndRenderData() {
@@ -8,6 +10,7 @@ function getAndRenderData() {
     .then((response) => response.json())
     .then((response) => {
       console.log(response);
+      display.textContent = "";
       response.artObjects.forEach((art) => {
         artCollection.push({
           title: art.title,
@@ -40,6 +43,6 @@ function showCollection(data) {
       " </figcaption></figure>";
 
     article.innerHTML = output;
-    document.getElementById("collection").appendChild(article);
+    document.querySelector(".collection").appendChild(article);
   });
 }
