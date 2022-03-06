@@ -46,3 +46,37 @@ function showCollection(data) {
     document.querySelector(".collection").appendChild(article);
   });
 }
+
+document.querySelector("input").addEventListener("click", searchInput);
+function searchInput() {
+  const addClass = document.querySelector("input");
+  addClass.classList.add("search");
+}
+
+// const fetchData = async() => {
+//   const url = "https://www.rijksmuseum.nl/api/nl/collection?key=0tlmzj3f";
+//   const response = await fetch(url);
+//   const data = response.json();
+//   return data;
+// }
+
+function search(){
+  const searchBtn = document.querySelector("search-btn");
+  const searchInput = document.querySelector("input-field");
+
+  const search = data.filter( (data) => {
+    return(
+      data.title.toLowercase()
+    )
+  })
+  display.innerHTML = "";
+  searchBtn.addEventListener("click", () => {
+    
+  })
+}
+
+
+
+
+
+// export {fetchData}

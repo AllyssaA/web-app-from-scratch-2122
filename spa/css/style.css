@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Poppins, sans-serif;
+  }
+
+/* Header */
+header{
+    position: relative;
+}
+header h1{
+    
+    padding: .5em .1em;
+}
+
+/* Search */
+/* header form input{
+    display: none;
+} */
+
+header form label{
+    background-color: aquamarine;
+    position: absolute;
+    right: 0;
+}
+/* images in artcollection */
+section article figure img{
+      width: 100vw;
+  }
+
+
