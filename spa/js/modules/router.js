@@ -6,7 +6,7 @@ display.textContent = "Loading art collection...";
 
 export const router = () => {
   const url = "https://www.rijksmuseum.nl/api/nl/collection";
-  const key = "?key=0tlmzj3f"
+  const key = "?key=0tlmzj3f&ps=20"
   routie({
     overview: async () => {
       const getArtPiece = await getData(`${url}${key}`);

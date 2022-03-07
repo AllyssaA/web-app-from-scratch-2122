@@ -1,3 +1,10 @@
+/**
+ * @title Collect art 
+ * @description Stores collected art in an array
+ * @function
+ * @param {*} response 
+ * @param {*} element 
+ */
 export function setArtPiece(response, element) {
   const artCollection = [];
   console.log(response);
@@ -14,22 +21,28 @@ export function setArtPiece(response, element) {
   showCollection(artCollection); //gebruikt functie hieronder, dus hoeft niet geexporteerd te worden
 }
 
+
+/**
+ * @title Render art collection
+ * @function
+ * @description
+ * @param {Object} dataset van API. Hier loop ik doorheen
+ */
 function showCollection(data) {
+  const main = document.getElementById('collections')
+  //controle als er al een element met class collection bestaat, zoniet voeg toe
+  const createCollection = document.createElement('section')
+  createCollection.setAttribute('class', 'collection')
+  main.appendChild(createCollection)
+  // bestaat de detail section? verwijder dit dan
+  if(document.getElementById('detail')) {
+    const detail = document.getElementById('detail')
+    main.removeChild(detail)
+  }
+
   data.forEach((item) => {
     const article = document.createElement("article");
 
-    // let output =
-    //   "<h2>" +
-    //   item.title +
-    //   "</h2>" +
-    //   "<h3> " +
-    //   item.maker +
-    //   '</h3><figure><img src="' +
-    //   item.img +
-    //   '" alt=""><figcaption>' +
-    //   item.place +
-    //   " </figcaption></figure>";
-    // console.log('overview')
     let output = `
       <a href="#detail/${item.artId}">
         <h2>${item.title}</h2>
@@ -46,6 +59,13 @@ function showCollection(data) {
   });
 }
 
+/**
+ * @title Data detail page
+ * @description
+ * @function
+ * @param {*} data 
+ * @returns 
+ */
 export const detail = (data) => {
   const mainContainer = document.querySelector("main");
   while (mainContainer.firstChild) {
@@ -59,7 +79,7 @@ export const detail = (data) => {
       <p>${data.artObject.longTitle}</p>
       <a id="button" href="#overview"<span>Back</span></a>
     <section>
-    </article>
+  </article>
   `;
 
   mainContainer.insertAdjacentHTML('beforeend', detailArticle)
