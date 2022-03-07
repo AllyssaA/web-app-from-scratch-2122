@@ -8,6 +8,7 @@ export function setArtPiece(response, element) {
       img: art.webImage.url,
       place: art.productionPlaces,
       maker: art.principalOrFirstMaker,
+      artId: art.objectNumber
     });
   });
   showCollection(artCollection); //gebruikt functie hieronder, dus hoeft niet geexporteerd te worden
@@ -17,41 +18,48 @@ function showCollection(data) {
   data.forEach((item) => {
     const article = document.createElement("article");
 
-    let output =
-      "<h2>" +
-      item.title +
-      "</h2>" +
-      "<h3> " +
-      item.maker +
-      '</h3><figure><img src="' +
-      item.img +
-      '" alt=""><figcaption>' +
-      item.place +
-      " </figcaption></figure>";
+    // let output =
+    //   "<h2>" +
+    //   item.title +
+    //   "</h2>" +
+    //   "<h3> " +
+    //   item.maker +
+    //   '</h3><figure><img src="' +
+    //   item.img +
+    //   '" alt=""><figcaption>' +
+    //   item.place +
+    //   " </figcaption></figure>";
+    // console.log('overview')
+    let output = `
+      <a href="#detail/${item.artId}">
+        <h2>${item.title}</h2>
+        <h3>${item.maker}</h3>
+        <figure>
+          <img src="${item.img}" alt="">
+          <figcaptio>${item.place}</figcaption>
+        </figure>
+      </a>
+      `;
 
     article.innerHTML = output;
     document.querySelector(".collection").appendChild(article);
   });
 }
 
-
-
 export const detail = (data) => {
   const mainContainer = document.querySelector("main");
-  while (mainContainer.firstChild){
-    mainContainer.removeChild(mainContainer.firstChild)
+  while (mainContainer.firstChild) {
+    mainContainer.removeChild(mainContainer.firstChild);
   }
   const detailArticle = `
-  <article id="detail"
+  <article id="detail">
     <section>
-      <img src="${data.img}" alt="">
-      <p>${data.title}</p>
+      <h2>${data.title}</h2>
+      <img src="${data.artobjects.webImage}" alt="">
+      <p>${data.description}</p>
+      <a id="button" href="#overview"<span>Back</span></a>
     <section>
-    <section>
-      <p>${data.title}</p>
-    </section>
-    <a id="button" href="#overview"<span>Back</span></a>
-  </article>
+    </article>
   `;
 
   mainContainer.insertAdjecentHTML("beforehand", detailArticle);
