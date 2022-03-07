@@ -11,7 +11,7 @@ spa
 */
 import {getData} from "./modules/getData.js"
 import {setArtPiece} from "./modules/render.js"
-
+// https://gitmoji.dev/ get ur gitemojis now
 getAndRenderData();
 
 const display = document.querySelector("section");

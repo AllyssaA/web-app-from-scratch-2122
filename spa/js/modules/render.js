@@ -3,12 +3,12 @@ export function setArtPiece(response, element) {
   console.log(response);
   element.textContent = "";
   response.artObjects.forEach((art) => {
-      artCollection.push({
-          title: art.title,
-          img: art.webImage.url,
-          place: art.productionPlaces,
-          maker: art.principalOrFirstMaker,
-      });
+    artCollection.push({
+      title: art.title,
+      img: art.webImage.url,
+      place: art.productionPlaces,
+      maker: art.principalOrFirstMaker,
+    });
   });
   showCollection(artCollection); //gebruikt functie hieronder, dus hoeft niet geexporteerd te worden
 }
@@ -33,3 +33,27 @@ function showCollection(data) {
     document.querySelector(".collection").appendChild(article);
   });
 }
+
+
+
+export const detail = (data) => {
+  const mainContainer = document.querySelector("main");
+  while (mainContainer.firstChild){
+    mainContainer.removeChild(mainContainer.firstChild)
+  }
+  const detailArticle = `
+  <article id="detail"
+    <section>
+      <img src="${data.img}" alt="">
+      <p>${data.title}</p>
+    <section>
+    <section>
+      <p>${data.title}</p>
+    </section>
+    <a id="button" href="#overview"<span>Back</span></a>
+  </article>
+  `;
+
+  mainContainer.insertAdjecentHTML("beforehand", detailArticle);
+  return true;
+};
