@@ -54,14 +54,14 @@ export const detail = (data) => {
   const detailArticle = `
   <article id="detail">
     <section>
-      <h2>${data.title}</h2>
-      <img src="${data.artobjects.webImage}" alt="">
-      <p>${data.description}</p>
+      <h2>${data.artObject.title}</h2>
+      <img src="${data.artObject.webImage.url}" alt="">
+      <p>${data.artObject.longTitle}</p>
       <a id="button" href="#overview"<span>Back</span></a>
     <section>
     </article>
   `;
 
-  mainContainer.insertAdjecentHTML("beforehand", detailArticle);
+  mainContainer.insertAdjacentHTML('beforeend', detailArticle)
   return true;
 };

@@ -9,22 +9,22 @@ spa
     -> modules
     -> vendor(min js van andere partijen, zoals routie)
 */
-import {getData} from "./modules/getData.js"
-import {setArtPiece} from "./modules/render.js"
-// https://gitmoji.dev/ get ur gitemojis now
-getAndRenderData();
+// import {getData} from "./modules/getData.js"
+// import {setArtPiece} from "./modules/render.js"
+// // https://gitmoji.dev/ get ur gitemojis now
+// getAndRenderData();
 
-const display = document.querySelector("section");
-display.textContent = "Loading art collection...";
+// const display = document.querySelector("section");
+// display.textContent = "Loading art collection...";
 
-function getAndRenderData() {
-  const getURL = "https://www.rijksmuseum.nl/api/nl/collection?key=0tlmzj3f";
-  getData(getURL) // --> haalt de data op
-    .then((response) => {
-      setArtPiece(response, display); // --> plaatst de data in een html element 
-    })
-    .catch((error) => console.warn(error));
-}
+// function getAndRenderData() {
+//   const getURL = "https://www.rijksmuseum.nl/api/nl/collection?key=0tlmzj3f";
+//   getData(getURL) // --> haalt de data op
+//     .then((response) => {
+//       setArtPiece(response, display); // --> plaatst de data in een html element 
+//     })
+//     .catch((error) => console.warn(error));
+// }
 
 // document.querySelector("input").addEventListener("click", searchInput);
 // function searchInput() {
@@ -46,6 +46,13 @@ function getAndRenderData() {
     
 //   })
 // }
+
+
+import { router } from "./modules/router.js";
+
+(async function compile() {
+  router()
+})()
 
 
 
