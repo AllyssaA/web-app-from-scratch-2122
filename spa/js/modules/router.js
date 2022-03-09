@@ -12,7 +12,7 @@ display.textContent = "Loading art collection...";
  */
 export const router = () => {
   const url = "https://www.rijksmuseum.nl/api/nl/collection";
-  const key = "?key=0tlmzj3f"
+  const key = "?key=0tlmzj3f";
   routie({
     overview: async () => {
       const getArtPiece = await getData(`${url}${key}&ps=20`);
@@ -25,14 +25,12 @@ export const router = () => {
       return detail(details);
     },
     "search/:keyword": async (keyword) => {
-      const searchKeyword = await getData(`${url}${key}&q=${keyword}&ps=5`)
-      return setArtPiece(searchKeyword, display)
+      const searchKeyword = await getData(`${url}${key}&q=${keyword}&ps=5`);
+      return setArtPiece(searchKeyword, display);
     },
-    '': async () => {
-        const getOverview = await getData(`${url}${key}&ps=20`)
-        return setArtPiece(getOverview, display) 
-    }
+    "": async () => {
+      const getOverview = await getData(`${url}${key}&ps=20`);
+      return setArtPiece(getOverview, display);
+    },
   });
 };
-
-
