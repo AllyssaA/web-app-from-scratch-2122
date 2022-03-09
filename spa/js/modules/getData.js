@@ -1,13 +1,10 @@
 
-  /*
-    data ophalen
- 
-
-export function xoxox(){}
-export {getData}   een getch schrijven die de data ophaalt en deze terug stuurt
-  */
-
-/* Functie exporteren met een link die data terug stuurt */
+ /**
+ * @title getData
+ * @description fetches data from api 
+ * @param {*} url 
+ * @returns data from api
+ */
 export const getData = async (url) => {
   return await fetch(url)
     .then((response) => response.json())

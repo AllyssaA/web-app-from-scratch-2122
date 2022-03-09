@@ -7,26 +7,26 @@
  */
 export function setArtPiece(response, element) {
   const artCollection = [];
-  console.log(response);
+  // console.log('setArtPiece',response);
   element.textContent = "";
   response.artObjects.forEach((art) => {
     artCollection.push({
       title: art.title,
-      img: art.webImage.url,
+      img: art.hasImage ? art.webImage.url : 'https://c.tenor.com/VFFJ8Ei3C2IAAAAM/rickroll-rick.gif',
       place: art.productionPlaces,
       maker: art.principalOrFirstMaker,
       artId: art.objectNumber
     });
   });
-  showCollection(artCollection); //gebruikt functie hieronder, dus hoeft niet geexporteerd te worden
+  showCollection(artCollection);
 }
 
 
 /**
  * @title Render art collection
- * @function
- * @description
- * @param {Object} dataset van API. Hier loop ik doorheen
+ * @function showCollection
+ * @description render collection on page 
+ * @param {Object} dataset from API, looping through data
  */
 function showCollection(data) {
   const main = document.getElementById('collections')
@@ -49,7 +49,7 @@ function showCollection(data) {
         <h3>${item.maker}</h3>
         <figure>
           <img src="${item.img}" alt="">
-          <figcaptio>${item.place}</figcaption>
+          <figcaption>${item.place}</figcaption>
         </figure>
       </a>
       `;
@@ -61,8 +61,8 @@ function showCollection(data) {
 
 /**
  * @title Data detail page
- * @description
- * @function
+ * @description render art details on page
+ * @function detail
  * @param {*} data 
  * @returns 
  */
@@ -75,7 +75,7 @@ export const detail = (data) => {
   <article id="detail">
     <section>
       <h2>${data.artObject.title}</h2>
-      <img src="${data.artObject.webImage.url}" alt="">
+      <img src="${data.artObject.hasImage === true ? data.artObject.webImage.url : 'https://c.tenor.com/VFFJ8Ei3C2IAAAAM/rickroll-rick.gif'}" alt="">
       <p>${data.artObject.longTitle}</p>
       <a id="button" href="#overview"<span>Back</span></a>
     <section>
