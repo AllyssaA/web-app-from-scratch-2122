@@ -94,4 +94,7 @@ article h3 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
+  #detail section img{
+    max-width: 100%;
+  }
 }

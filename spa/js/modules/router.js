@@ -25,7 +25,7 @@ export const router = () => {
       return detail(details);
     },
     "search/:keyword": async (keyword) => {
-      const searchKeyword = await getData(`${url}${key}&q=${keyword}&ps=5`);
+      const searchKeyword = await getData(`${url}${key}&q=${keyword}&ps=20`);
       return setArtPiece(searchKeyword, display);
     },
     "": async () => {
