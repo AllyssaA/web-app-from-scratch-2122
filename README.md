@@ -20,7 +20,6 @@ Insert gif or link to demo
 
 ## Backlog
 
-
 Must
 
 - [ ] details article image styling
