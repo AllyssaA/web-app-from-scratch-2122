@@ -1,5 +1,6 @@
 import { getData } from "./getData.js";
 import { detail, setArtPiece } from "./render.js";
+import { updateUI } from "./ui.js";
 // import { renderSearch, searchListener } from "./search.js";
 
 const display = document.querySelector("section");
@@ -16,7 +17,8 @@ export const router = () => {
   routie({
     overview: async () => {
       const getArtPiece = await getData(`${url}${key}&ps=20`);
-      return setArtPiece(getArtPiece, display);
+      
+      return setArtPiece(getArtPiece, updateUI());
     },
     //Route to detail
     "detail/:id": async (id) => {

@@ -84,6 +84,9 @@ article h2 {
 article h3 {
   font-weight: light;
 }
+#detail section img{
+  max-width: 100%;
+}
 
 @media screen and (min-width: 1080px) {
   form {
@@ -94,7 +97,5 @@ article h3 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
-  #detail section img{
-    max-width: 100%;
-  }
+  
 }
