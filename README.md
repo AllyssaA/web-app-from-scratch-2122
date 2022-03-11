@@ -2,27 +2,36 @@
 # Rijksmuseum collection
 
 
-
-
-## Table of contents
 ## Demo
 
-Insert gif or link to demo
+[Live prototype](https://allyssaa.github.io/web-app-from-scratch-2122/spa/)
+
 
 
 ## Description
+
+Rijksmuseum collection is a single page application using an API. With this app you can search for art from the Rijksmuseum API.
+
+
 ## Concept
+
+User story: As an art lover, I want to be able to search and view art from the Rijksmuseum at home, so that I can still enjoy art during a lockdown
+
 ## Installation
 
+>git clone https://github.com/AllyssaA/web-app-from-scratch-2122.git
 
     
 ## Activity diagram
+![](https://github.com/AllyssaA/web-app-from-scratch-2122/blob/main/spa/assets/activitydiagram.JPG)
+![](https://github.com/AllyssaA/web-app-from-scratch-2122/blob/main/spa/assets/design.JPG)
+
 
 ## Backlog
 
 Must
 
-- [ ] details article image styling
+- [x] details article image styling
 - [ ] error state
 - [ ] ui stack
 
