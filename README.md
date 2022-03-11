@@ -1,7 +1,7 @@
 
 # Rijksmuseum collection
 
-
+![](https://github.com/AllyssaA/web-app-from-scratch-2122/blob/main/spa/assets/Screenshot%202022-03-11%20at%2011-47-38%20Rijksmuseum%20collection.png)
 ## Demo
 
 [Live prototype](https://allyssaa.github.io/web-app-from-scratch-2122/spa/)
