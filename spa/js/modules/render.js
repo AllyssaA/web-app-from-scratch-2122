@@ -9,7 +9,7 @@ export function setArtPiece(response, element) {
   const artCollection = [];
   // console.log('setArtPiece',response);
   // element.textContent = "";
-  response.artObjects.forEach((art) => {
+  response.artObjects.map((art) => {
     artCollection.push({
       title: art.title,
       img: art.hasImage ? art.webImage.url : '/spa/assets/na.png',
@@ -29,7 +29,7 @@ export function setArtPiece(response, element) {
  * @param {Object} dataset from API, looping through data
  */
 function showCollection(data) {
-  const main = document.getElementById('collections')
+  const main = document.querySelector('.collections')
   //controle als er al een element met class collection bestaat, zoniet voeg toe
   const createCollection = document.createElement('section')
   createCollection.setAttribute('class', 'collection')
@@ -40,7 +40,7 @@ function showCollection(data) {
     main.removeChild(detail)
   }
 
-  data.forEach((item) => {
+  data.map((item) => {
     const article = document.createElement("article");
 
     let output = `
@@ -49,7 +49,6 @@ function showCollection(data) {
         <h3>${item.maker}</h3>
         <figure>
           <img src="${item.img}" alt="">
-          <figcaption>${item.place}</figcaption>
         </figure>
       </a>
       `;

@@ -29,15 +29,16 @@ export const router = () => {
     },
     "search/:keyword": async (keyword) => {
       const searchKeyword = await getData(`${url}${key}&q=${keyword}&ps=20`);
-      if (searchKeyword.artObjects.length == 0) {
+      if (searchKeyword.artObjects.length === 0) {
         uiState('noResult', keyword)
+      } else {
+        uiState('searched', keyword)
       }
       return setArtPiece(searchKeyword);
       //als je hier een terug knop naartoe wilt moet je de route eigenlijk opslaan in url
     },
     "": async () => {
       const getOverview = await getData(`${url}${key}&ps=20`);
-      // loadingArt()
       return setArtPiece(getOverview);
     },
   });
