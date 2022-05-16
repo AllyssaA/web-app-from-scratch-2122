@@ -8,7 +8,7 @@
 export function setArtPiece(response, element) {
   const artCollection = [];
   // console.log('setArtPiece',response);
-  element.textContent = "";
+  // element.textContent = "";
   response.artObjects.forEach((art) => {
     artCollection.push({
       title: art.title,
@@ -77,7 +77,7 @@ export const detail = (data) => {
       <h2>${data.artObject.title}</h2>
       <img src="${data.artObject.hasImage === true ? data.artObject.webImage.url : '/spa/assets/na.png' }" alt="">
       <p>${data.artObject.longTitle}</p>
-      <a id="button" href="#overview"<span>Back</span></a>
+      <a id="button" href=""<span>Back</span></a>
     <section>
   </article>
   `;

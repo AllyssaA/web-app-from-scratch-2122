@@ -12,23 +12,31 @@
     <header>
       <h1>Rijksmuseum collection</h1>
       <form action="">
-        <p>Search an artist</p>
+        <p>Find artworks</p>
         <input
           type="text"
           class="search-bar"
           placeholder="Search artist, art ..."
         />
         <!-- ObjectNumber intoetsen en dan navigeren -->
-        <button class="search-btn">Search</button>
+        <button type="submit" class="search-btn">Search</button>
       </form>
     </header>
 
-    <main id="collections">
-      <section class="collection">
-        <p>Art not loaded yet...</p>
+    <main>
+      <section class="title">
+        <h1>Welcome!</h1>
+        <h2>Find your favorite artwork</h2>
       </section>
+      <section id="collections">
+        <h3>Featured: artworks</h3>
 
-      <article class="results"></article>
+        <section class="loading displayLoading">
+          <div></div>
+        </section>
+
+        <section class="collection"></section>
+      </section>
     </main>
     <script src="js/vendor/routie.js"></script>
   </body>
