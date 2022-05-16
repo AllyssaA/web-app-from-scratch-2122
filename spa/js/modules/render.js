@@ -12,7 +12,7 @@ export function setArtPiece(response, element) {
   response.artObjects.forEach((art) => {
     artCollection.push({
       title: art.title,
-      img: art.hasImage ? art.webImage.url : 'image not available',
+      img: art.hasImage ? art.webImage.url : '/spa/assets/na.png',
       place: art.productionPlaces,
       maker: art.principalOrFirstMaker,
       artId: art.objectNumber
@@ -75,7 +75,7 @@ export const detail = (data) => {
   <article id="detail">
     <section>
       <h2>${data.artObject.title}</h2>
-      <img src="${data.artObject.hasImage === true ? data.artObject.webImage.url : '' }" alt="">
+      <img src="${data.artObject.hasImage === true ? data.artObject.webImage.url : '/spa/assets/na.png' }" alt="">
       <p>${data.artObject.longTitle}</p>
       <a id="button" href="#overview"<span>Back</span></a>
     <section>
