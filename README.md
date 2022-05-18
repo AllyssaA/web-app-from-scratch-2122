@@ -78,7 +78,7 @@ I used an extension [Live Server](https://marketplace.visualstudio.com/items?ite
 
     
 # Activity diagram
-<img src="https://github.com/AllyssaA/web-app-from-scratch-2122/blob/main/spa/assets/activitydiagram.png" width="100%"/>
+<img src="https://github.com/AllyssaA/web-app-from-scratch-2122/blob/main/spa/assets/Screenshot%202022-05-18%20at%2018.44.39.png"/>
 
 
 
