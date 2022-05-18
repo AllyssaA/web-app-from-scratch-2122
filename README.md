@@ -92,6 +92,7 @@ TODO
 - [x] improve Activity Diagram
 - [x] Feedback to user when page is loading
 - [x] remove image placeholder to something that makes sense
+- [x] Rewrite readme
 
 
 
