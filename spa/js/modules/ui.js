@@ -26,11 +26,11 @@ export function uiState(typeState, param = '') {
     } 
     // searched 
     else if(typeState === 'searched') {
-        if (removeH2 >= 1){
-            removeH2.remove();
-            console.log('h2 removed executed')
-        } else{
+        if (removeH2 >= ""){
             console.log('nothing to remove')
+        } else{
+            removeH2.remove();
+            console.log('removed executed')
         }
         h1Text.textContent = `Search results for: ${param}`
     }
