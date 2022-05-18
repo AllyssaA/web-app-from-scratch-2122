@@ -11,6 +11,8 @@ export function uiState(typeState, param = '') {
     const h1Text = document.querySelector('.collections h1')
     const element = document.querySelector('.collections')
     const collection = document.querySelector('.collection')
+    const h2Text = document.createElement('h2')
+    const removeH2 = document.querySelector('.collections h2')
 
     // when something is wrong with data/api
     if(typeState == 'noData') {
@@ -19,14 +21,20 @@ export function uiState(typeState, param = '') {
     // search doesn't return anything
     else if(typeState == 'noResult') {
         h1Text.textContent = `Couldn't find any results for: ${param}`
-        const h2Text = document.createElement('h2')
         const text = document.createTextNode('Try searching for different artworks.')
         h2Text.appendChild(text)
         element.appendChild(h2Text)
         collection.remove();
     } 
     // searched 
-    else if(typeState == 'searched') {
+    else if(typeState === 'searched') {
+        if (removeH2 >= 1){
+            removeH2.remove();
+            console.log('h2 removed executed')
+        } else{
+            console.log('nothing to remove')
+        }
         h1Text.textContent = `Search results for: ${param}`
+
     }
 }

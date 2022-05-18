@@ -22,12 +22,18 @@ header > h1 {
   text-align: center;
 }
 
-header .title {
+header .title, header .title a h1{
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1em;
-  font-size: 22px;
+  /* font-size: 22px;   */
+  text-decoration: none ;
+}
+
+header .title a{
+  text-decoration: none;
+  color: #ffffff;
 }
 
 form {
@@ -66,16 +72,24 @@ input.search-bar {
   margin: 1em 0.5em;
 }
 
-.collections > h3{
-  color: rgb(228, 225, 225);
-  padding: 0 0 1em 0;
-}
-
 /* images in artcollection */
 .collections {
   margin: 2em 2em;
   padding: 1em 1em;
   /* background-color: #40474f; */
+}
+.collections > h3{
+  color: rgb(228, 225, 225);
+  padding: 0 0 1em 0;
+}
+
+.collections > h1, .collections > h2 {
+  padding: 1em;
+}
+
+.collection article a{
+  display: grid;
+  grid-template-rows: 4em 2em 1fr;
 }
 
 section article figure img {
@@ -161,7 +175,7 @@ article p {
   }
   .collection {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   
 }

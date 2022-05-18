@@ -12,7 +12,7 @@ export function setArtPiece(response, element) {
   response.artObjects.map((art) => {
     artCollection.push({
       title: art.title,
-      img: art.hasImage ? art.webImage.url : '/spa/assets/na.png',
+      img: art.hasImage ? art.headerImage.url : '/spa/assets/na.png',
       place: art.productionPlaces,
       maker: art.principalOrFirstMaker,
       artId: art.objectNumber
