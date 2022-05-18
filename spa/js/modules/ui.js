@@ -6,8 +6,6 @@ export function loadingIsDone() {
 
 // states
 export function uiState(typeState, param = '') {
-    const header = document.querySelector('.title h1')
-    // const headerText = document.querySelector('.title h2')
     const h1Text = document.querySelector('.collections h1')
     const element = document.querySelector('.collections')
     const collection = document.querySelector('.collection')
@@ -16,7 +14,7 @@ export function uiState(typeState, param = '') {
 
     // when something is wrong with data/api
     if(typeState == 'noData') {
-        header.textContent = "Something went wrong, can't retrieve data."
+        h1Text.textContent = 'Something went wrong, cannot retrieve data.'
     } 
     // search doesn't return anything
     else if(typeState == 'noResult') {
@@ -35,6 +33,9 @@ export function uiState(typeState, param = '') {
             console.log('nothing to remove')
         }
         h1Text.textContent = `Search results for: ${param}`
-
     }
+    else if(typeState === 'entree'){
+        h1Text.textContent = 'Featured artworks'
+    } 
+    
 }

@@ -19,6 +19,7 @@ export const router = () => {
   routie({
     overview: async () => {
       const getArtPiece = await getData(`${url}${key}&ps=20`);
+      // uiState('entree')
       return setArtPiece(getArtPiece);
     },
     //Route to detail
@@ -39,6 +40,9 @@ export const router = () => {
     },
     "": async () => {
       const getOverview = await getData(`${url}${key}&ps=20`);
+      if(getOverview.artObjects.length > 0){
+        uiState('entree')
+      }
       return setArtPiece(getOverview);
     },
   });
